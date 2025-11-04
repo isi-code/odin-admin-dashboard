@@ -8,7 +8,7 @@ body {
     width: 100%;
     height: 100vh;
     grid-template-columns: repeat(5,1fr);
-    grid-template-rows: 6rem 6rem repeat(4,1fr);
+    grid-template-rows: 6rem 4rem repeat(4,1fr);
 }
 
 aside {
@@ -24,7 +24,7 @@ aside h1 { margin-top:0; }
 aside nav {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: calc(var(--regular-padding)*2);
     margin-top: 4rem;
 }
 
@@ -51,30 +51,53 @@ button {
 }
 
 header {
-    padding: var(--regular-padding);
+    gap: var(--regular-padding);
+    padding: 0rem 2rem;
     grid-row: 1/3;
     grid-column: 2/7;
     display: grid;
+    align-content: center;
     z-index: 1;
     box-shadow: 1px 1px 4px rgb(134, 132, 132);
 }
 
-header > div:first-child {
+header > div:first-of-type {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     grid-row: 1/2;
 }
 
-header > div h2, 
-header > div h3,
-header > div p { margin-top:0; }
+header p, header h3, header h2 {
+    margin:0 auto;
+}
+
+header > div:first-of-type form div {
+    display: flex;
+    gap: var(--regular-padding);
+    align-items: center;
+    width: 100%;
+}
+
+header > div:first-of-type > form > div input{
+    width: 100%;
+    padding:0.4rem;
+    background-color: rgb(226, 236, 240);
+    border: none;
+    border-radius: var(--regular-padding);
+} 
+
+header > div:first-of-type > form + div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
 
 header > div + div { 
     grid-row: 2/3;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    align-content: center;
 }
 
 main {
@@ -108,6 +131,7 @@ main h2, main h3 {
     /* width: 100%; */
     /* height: clamp(50px,20vh,350px); */
     border: 1px black solid ;
+    background-color: white;
 }
 
 .main-container h3:nth-last-of-type(1) {
