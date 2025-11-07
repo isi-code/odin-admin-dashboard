@@ -20,7 +20,11 @@ h1, h2, h3, h4 {
     font-weight: 700;
 }
 
-p, button, a { font-family: Helvetica, Arial, Verdana, Geneva, Tahoma, sans-serif; }
+p, button, a, input, li { font-family: Helvetica, Arial, Verdana, Geneva, Tahoma, sans-serif; }
+
+.avatar{
+    width:50px;
+}
 
 aside {
     grid-area: 1 / 1 / span 5 / span 1;
@@ -110,7 +114,7 @@ header > div:first-of-type form > div{
 
 header > div:first-of-type > form > div input {
     width: 100%;
-    padding:0.4rem;
+    padding:0.4rem 0.8rem;
     background-color: rgb(226, 236, 240);
     border: none;
     border-radius: var(--regular-padding);
