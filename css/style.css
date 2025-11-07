@@ -15,15 +15,21 @@ body {
     grid-template-columns:max(280px,18vw) repeat(4,1fr);
 }
 
-h1, h2, h3, h4 { 
+h1, h2, h3, h4, h5 { 
     font-family: nexa-heavy, Helvetica, Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
 }
 
 p, button, a, input, li { font-family: Helvetica, Arial, Verdana, Geneva, Tahoma, sans-serif; }
 
-.avatar{
-    width:50px;
+.avatar-section {
+    display: flex;
+    align-items: center;
+    column-gap:var(--regular-padding);
+}
+
+.avatar-section img{
+    width:60px;
 }
 
 aside {
@@ -54,7 +60,7 @@ aside nav ul {
     list-style:none;
 }
 
-aside nav ul li a{
+aside nav ul li a {
     display: block;
     padding: var(--regular-padding);
     text-decoration: none;
@@ -120,10 +126,14 @@ header > div:first-of-type > form > div input {
     border-radius: var(--regular-padding);
 }
 
-header > div:first-of-type > form + div {
+.right-menu {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 1.5rem;
+}
+
+.right-menu img:nth-last-of-type(1){
+    width: 45px;
 }
 
 header > div + div {
@@ -140,7 +150,8 @@ main {
 }
 
 main h2,
-main h3 {
+main h3,
+main h5 {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -195,6 +206,12 @@ hr { border:0.5px solid rgb(134, 132, 132,0.5); }
     flex-direction: column;
     width: 100%;
     gap: 1.2rem;
+}
+
+.main-container section:nth-of-type(2) > div{
+    display: flex;
+    flex-direction: column;
+    gap: var(--regular-padding);
 }
 
 .main-container section:nth-of-type(2) > div { flex: 1; }
