@@ -7,13 +7,11 @@ body {
     display: grid;
     width: 100%;
     height: 100vh;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(auto-fit,1fr);
+    grid-template-columns:max(180px,13vw) repeat(4,1fr);
 }
 
 aside {
-    grid-row: 1/7;
-    grid-column: 1/2;
+    grid-area: 1 / 1 / span 5 / span 1;
     padding:var(--regular-padding);
     background-color: #1992D4;
     color: white;
@@ -28,7 +26,7 @@ aside nav {
     margin-top: 4rem;
 }
 
-nav ul {
+aside nav ul {
     padding: 0;
     margin: 0;
     list-style:none;
@@ -53,8 +51,7 @@ button {
 header {
     gap: var(--regular-padding);
     padding: var(--regular-padding) 2rem;
-    grid-row: 1/3;
-    grid-column: 2/7;
+    grid-column: 2 / span 4;
     display: grid;
     align-content: center;
     z-index: 1;
@@ -64,18 +61,22 @@ header {
 header > div:first-of-type {
     display: flex;
     justify-content: space-between;
-    grid-row: 1/2;
+    gap: var(--regular-padding);
 }
 
 header p, header h3, header h2 {
     margin:0 auto;
 }
 
-header > div:first-of-type form div {
+header > div:first-of-type form {
+    flex: 1;
+    max-width: 600px;
+}
+
+header > div:first-of-type form > div{
     display: flex;
     gap: var(--regular-padding);
     align-items: center;
-    width: 100%;
 }
 
 header > div:first-of-type > form > div input {
@@ -93,7 +94,6 @@ header > div:first-of-type > form + div {
 }
 
 header > div + div {
-    grid-row: 2/3;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -101,30 +101,33 @@ header > div + div {
 }
 
 main {
-    grid-row: 3/7;
-    grid-column: 2/6;
+    grid-column: 2/ span 4;
     padding:calc( var(--regular-padding) + 0.5rem);
     background-color: aliceblue;
 }
 
-main h2, main h3 {
+main h2, 
+main h3 {
     margin-top: 0;
     margin-bottom: 0;
 }
 
+main h4{ margin-bottom: 0; }
+
+main p{ margin-top: 5px; }
+
 .main-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap:var(--regular-padding);
 }
 
 .main-container section:first-of-type {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax( max( 135px, calc(100% / 3) ), 1fr) );
     gap:var(--regular-padding) 2rem;
-    grid-column: 1/4;
-    
+    grid-column: 1 / span 3;
 }
 
 .main-container section > div {
@@ -138,10 +141,7 @@ main h2, main h3 {
     border-left: 10px solid rgb(255, 208, 0);
 }
 
-.main-container h3:nth-last-of-type(1) {
-    grid-row: 1/2;
-    grid-column: 4/5;
-}
+.main-container h3:nth-last-of-type(1) { grid-area: 1 / 4 / 2 / 5; }
 
 hr { border:0.5px solid rgb(134, 132, 132,0.5); }
 
