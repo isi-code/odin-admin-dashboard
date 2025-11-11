@@ -66,6 +66,29 @@ aside nav ul li a {
     color: white;
 }
 
+aside nav ul li > a::before {
+    content: "";
+    display:inline-block;
+    background-image: url('../images/setting-svgrepo-com.svg');
+    width:30px;
+    height: 30px;
+    margin-right: var(--regular-padding);
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+aside nav ul li:nth-child(1) a::before { background-image: url('../images/setting-svgrepo-com.svg');}
+aside nav ul li:nth-child(2) a::before { background-image: url('../images/support-svgrepo-com.svg');}
+aside nav ul li:nth-child(3) a::before { background-image: url('../images/privacy-tips-svgrepo-com.svg');}
+
+aside nav ul:first-child li:nth-child(1) a::before { background-image: url('../images/home-svgrepo-com.svg');}
+aside nav ul:first-child li:nth-child(2) a::before { background-image: url('../images/profile-round-1342-svgrepo-com.svg');}
+aside nav ul:first-child li:nth-child(3) a::before { background-image: url('../images/messages-svgrepo-com.svg');}
+aside nav ul:first-child li:nth-child(4) a::before { background-image: url('../images/history-svgrepo-com.svg');}
+aside nav ul:first-child li:nth-child(5) a::before { background-image: url('../images/task-list-add-svgrepo-com.svg');}
+aside nav ul:first-child li:nth-child(6) a::before { background-image: url('../images/community-group-leader-svgrepo-com.svg');}
+
 aside nav ul li a:hover { text-decoration: underline; }
 
 button {
